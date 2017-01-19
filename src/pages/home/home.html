@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form" novalidate (ngSubmit)="submit()">
+    <ion-item-group>
+      <ion-item>
+        <ion-label stacked>Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select formControlName="gender">
+          <ion-option value="f" selected="true">Female</ion-option>
+          <ion-option value="m">Male</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <button ion-button default block type="submit" [disabled]="!form.valid || form.untouched">Submit</button>
+      </ion-item>
+    </ion-item-group>
+  </form>
+  <p>Counter: {{counter}}</p>
+</ion-content>
